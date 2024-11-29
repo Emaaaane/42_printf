@@ -4,17 +4,17 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
+SRC = ft_printf.c ft_hlpfunc.c
+
+OBJ = $(SRC:.c=.o)
+
 AR = ar -rc
 
 RM = rm -rf
 
-SRC = 
-
-OBJ = $(SRC:.c=.o)
-
 all : $(NAME)
 
-$(NAME) : $(OBJ) printf.h
+$(NAME) : $(OBJ) ft_printf.h
 	$(AR) $(NAME) $(OBJ)
 
 clean:
