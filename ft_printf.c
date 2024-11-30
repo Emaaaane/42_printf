@@ -6,7 +6,7 @@
 /*   By: imel-haj <imel-haj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:44:49 by imel-haj          #+#    #+#             */
-/*   Updated: 2024/11/29 14:35:30 by imel-haj         ###   ########.fr       */
+/*   Updated: 2024/11/30 18:56:41 by imel-haj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ int	ft_printf(const char *format, ...)
 	len = 0;
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (0);
+		if (format[i] == '%')
 		{
 			check_var(format[i + 1], args, &len);
 			i++;
